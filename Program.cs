@@ -36,7 +36,9 @@ namespace FYB
         {
             if (args.Author.IsBot) return;
 
-            Match match = Regex.Match(args.Message.Content, "(.*)(g)(.*)(u)(.*)(s)(.*)");
+            string lower = args.Message.Content.ToLower();
+
+            Match match = Regex.Match(lower, "(.*)(g)(.*)(u)(.*)(s)(.*)");
 
             if (!match.Success) return;
 
